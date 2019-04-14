@@ -1,0 +1,8 @@
+<plugin id="org.dita.iirds.iirdspackage">
+  <require plugin="org.dita.xhtml"/>
+  <require plugin="org.dita.html5"/>
+  <feature extension="dita.conductor.lib.import" file="lib/iirdspackage-rfc.jar"/>
+  <transtype name="iirdspackage" extends="common-html" desc="Creates an iiRDS publication package">
+  </transtype>
+  <feature extension="dita.conductor.target.relative" file="conductor.xml"/>
+</plugin>

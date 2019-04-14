@@ -1,0 +1,375 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="urn:oasis:names:tc:dita:rng:vocabularyModuleDesc.rng"
+                         schematypens="http://relaxng.org/ns/structure/1.0"?>
+<grammar xmlns="http://relaxng.org/ns/structure/1.0"
+  xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"
+  xmlns:dita="http://dita.oasis-open.org/architecture/2005/"
+  datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes">
+  <moduleDesc xmlns="http://dita.oasis-open.org/architecture/2005/">
+    <moduleTitle>DITA iiRDS Attribute Domain </moduleTitle>
+    <headerComment><![CDATA[
+=============================================================
+                   HEADER                                    
+=============================================================
+MODULE:    DITA iiRDS Document Type Attribute Domain             
+VERSION:   0.9                                             
+DATE:      April 2019
+                                                             
+=============================================================
+
+=============================================================
+                   PUBLIC DOCUMENT TYPE DEFINITION           
+                   TYPICAL INVOCATION                        
+                                                             
+ Refer to this file by the following public identifier or an 
+      appropriate system identifier 
+      
+  urn:dita:iirds:rng:documentTypeAttDomain.rng
+      
+=============================================================
+SYSTEM:     Darwin Information Typing Architecture (DITA)    
+                                                             
+PURPOSE:    Declaring the substitution context and domain    
+            entity declarations for the iiRDS Document Type    
+            Attribute Domain                                 
+                                                             
+ORIGINAL CREATION DATE:                                      
+            June 2013                                        
+                                                             
+            (C) Copyright OASIS Open 2013.                   
+            All Rights Reserved.                             
+                                                             
+ UPDATES:                                                    
+=============================================================
+]]></headerComment>
+    <moduleMetadata>
+      <moduleType>attributedomain</moduleType>
+      <moduleShortName>iirdsAtt-d</moduleShortName>
+      <modulePublicIds>
+        <dtdEnt>-//IIRDS//ENTITIES DITA<var presep=" " name="ditaver"/> iiRDS Attribute
+          Domain//EN</dtdEnt>
+        <xsdMod>urn:dita:iirds:xsd:iirdsAttDomain.xsd<var presep=":" name="ditaver"/></xsdMod>
+        <rncMod>urn:dita:iirds:rnc:iirdsAttDomain.rnc<var presep=":" name="ditaver"/></rncMod>
+        <rngMod>urn:dita:iirds:rng:iirdsAttDomain.rng<var presep=":" name="ditaver"/></rngMod>
+      </modulePublicIds>
+      <domainsContribution>a(props iirds)</domainsContribution>
+      <domainsContribution>a(props iirds-component)</domainsContribution>
+      <domainsContribution>a(props document-type)</domainsContribution>
+<!--      <domainsContribution>a(props event-code)</domainsContribution>-->
+<!--      <domainsContribution>a(props event-type)</domainsContribution>-->
+      <domainsContribution>a(props information-subject)</domainsContribution>
+      <domainsContribution>a(props operating-supply)</domainsContribution>
+      <domainsContribution>a(props spare-part)</domainsContribution>
+      <domainsContribution>a(props lubricant)</domainsContribution>
+      <domainsContribution>a(props consumable-supply)</domainsContribution>
+      <domainsContribution>a(props hardware-tool)</domainsContribution>
+      <domainsContribution>a(props planning-down-time)</domainsContribution>
+      <domainsContribution>a(props planning-maintenance-interval)</domainsContribution>
+      <domainsContribution>a(props planning-setup-time)</domainsContribution>
+      <domainsContribution>a(props planning-working-time)</domainsContribution>
+      <domainsContribution>a(props product-variant)</domainsContribution>
+      <domainsContribution>a(props product-feature)</domainsContribution>
+      <domainsContribution>a(props product-lifecycle-phase)</domainsContribution>
+<!--      <domainsContribution>a(props qualification-role)</domainsContribution>-->
+<!--      <domainsContribution>a(props qualification-skilllevel)</domainsContribution>-->
+<!--      <domainsContribution>a(props identity-identifier)</domainsContribution>-->
+<!--      <domainsContribution>a(props identity-domain)</domainsContribution>-->
+<!--      <domainsContribution>a(props party-role)</domainsContribution>-->
+<!--      <domainsContribution>a(props content-lifecycle-status-value)</domainsContribution>-->
+     </moduleMetadata>
+  </moduleDesc>
+  
+  <div><a:documentation>Information type</a:documentation>
+  <define name="document-typeAtt-d-attribute">
+    <optional>
+      <attribute name="document-type">
+        <a:documentation>iiRDS: The type of a document.</a:documentation>
+      </attribute>
+    </optional>
+  </define>
+
+  <define name="props-attribute-extensions" combine="interleave">
+    <ref name="document-typeAtt-d-attribute"/>
+  </define>
+
+
+    <define name="information-subjectAtt-d-attribute">
+      <optional>
+        <attribute name="information-subject">
+          <a:documentation>iiRDS: Type of information. Abstract base class of subjects that an information unit covers.</a:documentation>
+        </attribute>
+      </optional>
+    </define>
+    
+    <define name="props-attribute-extensions" combine="interleave">
+      <ref name="information-subjectAtt-d-attribute"/>
+    </define>
+    
+  </div>
+
+
+<div>
+  <a:documentation>Functional metadata</a:documentation>
+  
+  <!--<define name="eventCodeAtt-d-attribute">
+    <optional>
+      <attribute name="event-code">
+        <a:documentation>iiRDS: Describes an event that happens in the technical system. References the code of the event.</a:documentation>
+      </attribute>
+    </optional>
+  </define>-->
+  
+  <!--<define name="props-attribute-extensions" combine="interleave">
+    <ref name="eventCodeAtt-d-attribute"/>
+  </define>-->
+  
+  <!--<define name="eventTypeAtt-d-attribute">
+    <optional>
+      <attribute name="event-type">
+        <a:documentation>iiRDS: Describes an event that happens in the technical system. References the type of the event.</a:documentation>
+      </attribute>
+    </optional>
+  </define>-->
+  <!--<define name="props-attribute-extensions" combine="interleave">
+    <ref name="eventTypeAtt-d-attribute"/>
+  </define>-->
+  
+   
+  
+  <define name="operating-supplyAtt-d-attribute">
+    <optional>
+      <attribute name="operating-supply">
+        <a:documentation>iiRDS: Type of supply: Physical items required for the running of a manufacturing production or service facility.</a:documentation>
+      </attribute>
+    </optional>
+  </define>
+  
+  <define name="props-attribute-extensions" combine="interleave">
+    <ref name="operating-supplyAtt-d-attribute"/>
+  </define>
+  
+  <define name="spare-partAtt-d-attribute">
+    <optional>
+      <attribute name="spare-part">
+        <a:documentation>iiRDS: Type of supply: A spare part is an interchangeable part that is kept in an inventory and used for the repair or replacement of failed units of a technical system.</a:documentation>
+      </attribute>
+    </optional>
+  </define>
+  
+  <define name="props-attribute-extensions" combine="interleave">
+    <ref name="spare-partAtt-d-attribute"/>
+  </define>
+  
+  <define name="lubricantAtt-d-attribute">
+    <optional>
+      <attribute name="lubricant">
+        <a:documentation>iiRDS: Type of supply: Lubricant, meaning a substance used for lubricating an engine or component, such as oil or grease.</a:documentation>
+      </attribute>
+    </optional>
+  </define>
+  
+  <define name="props-attribute-extensions" combine="interleave">
+    <ref name="lubricantAtt-d-attribute"/>
+  </define>
+  
+  <define name="consumable-supplyAtt-d-attribute">
+    <optional>
+      <attribute name="consumable-supply">
+        <a:documentation>iiRDS: Type of supply: Goods or material that is consumed, meaning dissipated or spent, in the lifecycle of a technical system. Examples are batteries, sanding discs, and magnets.</a:documentation>
+      </attribute>
+    </optional>
+  </define>
+  
+  <define name="props-attribute-extensions" combine="interleave">
+    <ref name="consumable-supplyAtt-d-attribute"/>
+  </define>
+  
+  <define name="hardware-toolAtt-d-attribute">
+    <optional>
+      <attribute name="hardware-tool">
+        <a:documentation>iiRDS: Type of supply: A device or implement, used to carry out a particular function or a working task.</a:documentation>
+      </attribute>
+    </optional>
+  </define>
+  
+  <define name="props-attribute-extensions" combine="interleave">
+    <ref name="hardware-toolAtt-d-attribute"/>
+  </define>
+  
+  <define name="planning-down-timeAtt-d-attribute">
+    <optional>
+      <attribute name="planning-down-time">
+        <a:documentation>iiRDS: Type of planning time: Period of time during which a technical system is stopped, especially during setup for an operation or when making repairs.</a:documentation>
+      </attribute>
+    </optional>
+  </define>
+  
+  <define name="props-attribute-extensions" combine="interleave">
+    <ref name="planning-down-timeAtt-d-attribute"/>
+  </define>
+  
+  <define name="planning-maintenance-intervalAtt-d-attribute">
+    <optional>
+      <attribute name="planning-maintenance-interval">
+        <a:documentation>iiRDS: Type of planning time: Fixed time interval for the scheduled maintenance of a technical system or its parts.</a:documentation>
+      </attribute>
+    </optional>
+  </define>
+  
+  <define name="props-attribute-extensions" combine="interleave">
+    <ref name="planning-maintenance-intervalAtt-d-attribute"/>
+  </define>
+  
+  <define name="planning-setup-timeAtt-d-attribute">
+    <optional>
+      <attribute name="planning-setup-time">
+        <a:documentation>iiRDS: Type of planning time: Period of time required to prepare a technical system for a specific function or job.</a:documentation>
+      </attribute>
+    </optional>
+  </define>
+  
+  <define name="props-attribute-extensions" combine="interleave">
+    <ref name="planning-setup-timeAtt-d-attribute"/>
+  </define>
+  
+  <define name="planning-working-timeAtt-d-attribute">
+    <optional>
+      <attribute name="planning-working-time">
+        <a:documentation>iiRDS: Type of planning time: Period of time that is required for a specific working task.</a:documentation>
+      </attribute>
+    </optional>
+  </define>
+  
+  <define name="props-attribute-extensions" combine="interleave">
+    <ref name="planning-working-timeAtt-d-attribute"/>
+  </define>
+  
+  <!--<define name="qualification-roleAtt-d-attribute">
+    <optional>
+      <attribute name="qualification-role">
+        <a:documentation>iiRDS: Docking point for custom roles for users of the technical system and the associated technical information.</a:documentation>
+      </attribute>
+    </optional>
+  </define>-->
+  
+  <!--<define name="props-attribute-extensions" combine="interleave">
+    <ref name="qualification-roleAtt-d-attribute"/>
+  </define>-->
+  
+  <!--<define name="qualification-skilllevelAtt-d-attribute">
+    <optional>
+      <attribute name="qualification-skilllevel">
+        <a:documentation>iiRDS: Docking point for custom skill levels that the users of the technical system and the associated technical information require.</a:documentation>
+      </attribute>
+    </optional>
+  </define>-->
+  
+  <!--<define name="props-attribute-extensions" combine="interleave">
+    <ref name="qualification-skilllevelAtt-d-attribute"/>
+  </define>-->
+  
+</div>
+  
+  <div>
+    <a:documentation>Product metadata</a:documentation>
+    
+    <define name="iirds-componentAtt-d-attribute">
+      <optional>
+        <attribute name="iirds-component">
+          <a:documentation>iiRDS: Describes a component of the technical system that the documentation refers to.</a:documentation>
+        </attribute>
+      </optional>    
+    </define>
+    
+    <define name="props-attribute-extensions" combine="interleave">
+      <ref name="iirds-componentAtt-d-attribute"/>
+    </define>
+    
+    
+    <define name="product-lifecycle-phaseAtt-d-attribute">
+      <optional>
+        <attribute name="product-lifecycle-phase">
+          <a:documentation>iiRDS: Parent class for standardized product lifecycle phases that technical documentation may refer to.</a:documentation>
+        </attribute>
+      </optional>
+    </define>
+    
+    <define name="props-attribute-extensions" combine="interleave">
+      <ref name="product-lifecycle-phaseAtt-d-attribute"/>
+    </define>
+    
+    <define name="product-variantAtt-d-attribute">
+      <optional>
+        <attribute name="product-variant">
+          <a:documentation>iiRDS: A variation of a product with some specific characteristics or features.</a:documentation>
+        </attribute>
+      </optional>
+    </define>
+    
+    <define name="props-attribute-extensions" combine="interleave">
+      <ref name="product-variantAtt-d-attribute"/>
+    </define>
+    
+    <define name="product-featureAtt-d-attribute">
+      <optional>
+        <attribute name="product-feature">
+          <a:documentation>iiRDS: Parent class for characteristics and functions of a product or component.</a:documentation>
+        </attribute>
+      </optional>
+    </define>
+    
+    <define name="props-attribute-extensions" combine="interleave">
+      <ref name="product-featureAtt-d-attribute"/>
+    </define>
+    
+  </div>
+  
+  <div>
+    <a:documentation>Administrative metadata</a:documentation>
+    
+    <!--<define name="iirds-identity-identifierAtt-d-attribute">
+      <optional>
+        <attribute name="identity-identifier">
+          <a:documentation>iiRDS: An unambiguous reference to the resource within a given context.</a:documentation>
+        </attribute>
+      </optional>    
+    </define>-->    
+    <!--<define name="props-attribute-extensions" combine="interleave">
+      <ref name="iirds-identity-identifierAtt-d-attribute"/>
+    </define>-->
+    
+    <!--<define name="iirds-identity-domainAtt-d-attribute">
+      <optional>
+        <attribute name="identity-domain">
+          <a:documentation>iiRDS: Domain of an identifier that is assigned to an iiRDS domain entity.</a:documentation>
+        </attribute>
+      </optional>    
+    </define>-->    
+    <!--<define name="props-attribute-extensions" combine="interleave">
+      <ref name="iirds-identity-domainAtt-d-attribute"/>
+    </define>-->
+    
+    <!--<define name="iirds-party-roleAtt-d-attribute">
+      <optional>
+        <attribute name="party-role">
+          <a:documentation>iiRDS: Role of a party related to an iiRDS domain entity.</a:documentation>
+        </attribute>
+      </optional>    
+    </define>-->    
+    <!--<define name="props-attribute-extensions" combine="interleave">
+      <ref name="iirds-party-roleAtt-d-attribute"/>
+    </define>-->
+    
+    <!--<define name="iirds-content-lifecycle-status-valueAtt-d-attribute">
+      <optional>
+        <attribute name="content-lifecycle-status-value">
+          <a:documentation>iiRDS: Content lifecycle status of an information unit.</a:documentation>
+        </attribute>
+      </optional>    
+    </define>-->    
+    <!--<define name="props-attribute-extensions" combine="interleave">
+      <ref name="iirds-content-lifecycle-status-valueAtt-d-attribute"/>
+    </define>-->
+    
+  </div>
+</grammar>

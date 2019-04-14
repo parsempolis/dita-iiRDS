@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:dita="http://dita-ot.sourceforge.net" name="iirdspackage">
+
+	<target name="dita2iirdspackage" depends="iirdspackage.init, html5.init, build-init, preprocess, iirdspackage.filteratts, html5.topic, html5.css, iirdspackage.topicmd, iirdspackage.zip, iirdspackage.clean" />
+
+	<target name="iirdspackage.init">
+		
+		<!-- use default CSS from css subdirectory when not otherwise provided by parameters -->
+		<condition property="is.default.css">
+			<not>
+				<or>
+					<isset property="args.css"/>
+					<isset property="args.cssroot"/>
+				</or>
+			</not>
+		</condition>
+		<condition property="args.cssroot" value="${dita.plugin.org.dita.iirds.iirdspackage.dir}/css/">
+			<isset property="is.default.css"/>
+		</condition>
+		<condition property="args.css" value="default.css">
+			<isset property="is.default.css"/>
+		</condition>
+		<condition property="args.copycss" value="yes">
+			<isset property="is.default.css"/>
+		</condition>
+		
+		<!-- content path prefix in iirds package --> 
+		<condition property="iirds.content.path" value="content">
+			<not>
+				<isset property="iirds.content.path"/>
+			</not>
+		</condition>
+		
+		<!-- file extension of transformed DTIA files -->
+	    <condition property="out.ext" value="${iirds.transtype.extension}">
+	        <isset property="${iirds.transtype.extension}"/>
+	    </condition>
+
+		<!-- use .xhtml extension when producing iiRDS/A -->
+		<condition property="out.ext" value=".xhtml">
+		 <and>	
+			<istrue value="${iirds.restricted}"/>
+	      	<not>
+	        	<isset property="out.ext"/>
+	      	</not>
+		 </and>
+	    </condition>
+	    <condition property="out.ext" value=".html">
+	      <not>
+	        <isset property="out.ext"/>
+	      </not>
+	    </condition>
+
+		
+		<!-- format restriction -->
+		<condition property="args.xsl" value="${dita.plugin.org.dita.iirds.iirdspackage.dir}/xsl/dita2xhtml5.xsl">
+			<istrue value="${iirds.restricted}"/>
+		</condition>
+		<condition property="transtype.mediatype" value="application/xhtml+xml">
+			<istrue value="${iirds.restricted}"/>
+		</condition>
+		<condition property="transtype.mediatype" value="text/html">
+			<not>
+				<isset property="transtype.mediatype"/>
+			</not>
+		</condition>
+		<condition property="format.restriction" value="A">
+			<istrue value="${iirds.restricted}"/>
+		</condition>
+
+		<!-- Metadata mapping handler configuration -->
+		<condition property="iirds.metadatahandler.class" value="org.dita.iirds.mapper.IIRDSHandler">
+		   <not>
+		     <isset property="iirds.metadatahandler.class"/>
+		   </not>
+		</condition>
+		
+		<!-- need to filter attributes? -->
+		<condition property="filter.attributes">
+			<equals arg1="${iirds.metadatahandler.class}" arg2="org.dita.iirds.mapper.IIRDSHandler" forcestring="true"/>
+		</condition>	
+	</target>
+		
+	<target name="iirdspackage.filteratts" depends="iirdspackage.init, build-init, preprocess" description="Filter iiRDS attributes" if="${filter.attributes}">
+	    <pipeline message="Filter iiRDS attributes" taskname="filter-iirds-attributes" inputmap="${user.input.file}">
+		      <module class="org.dita.iirds.AttributeFilterModule">
+		        <param name="conserve-memory" expression="${conserve-memory}" if="conserve-memory"/>
+		 	  	<param name="TRANSTYPE" expression="${transtype}"/>
+		      	<param name="transtype.extension" expression="${out.ext}"/>
+		      	<param name="transtype.mediatype" expression="${transtype.mediatype}"/>
+				<param name="content.path" expression="${iirds.content.path}"/>
+		      	<param name="format.restriction" expression="${format.restriction}" if="format.restriction"/>
+		      </module>
+		    </pipeline>
+	</target>
+	
+	<target name="iirdspackage.topicmd" depends="iirdspackage.init, build-init, preprocess, iirdspackage.filteratts" description="Extracts topic metadata and converts them to iiRDS RDF">
+		<echo level="debug" message="format.restriction=${format.restriction}, iirds.restricted=${iirds.restricted}"/>
+	    <pipeline message="Extract iiRDS metadata" taskname="extract-iirds-meta" inputmap="${user.input.file}">
+	      <module class="org.dita.iirds.MetadataExtractorModule">
+	        <param name="conserve-memory" expression="${conserve-memory}" if="conserve-memory"/>
+	 	  	<param name="TRANSTYPE" expression="${transtype}"/>
+	      	<param name="transtype.extension" expression="${out.ext}"/>
+	      	<param name="transtype.mediatype" expression="${transtype.mediatype}"/>
+			<param name="content.path" expression="${iirds.content.path}"/>
+	      	<param name="metadatahandler.class" expression="${iirds.metadatahandler.class}"/>
+	      	<param name="format.restriction" expression="${format.restriction}" if="format.restriction"/>
+	      </module>
+	    </pipeline>
+	</target>
+	
+	
+	<target name="iirdspackage.zip" depends="iirdspackage.init, build-init" description="Zips the all files in the ouput directory">
+		
+		<!-- do not compress, so mimetype file keeps uncompressed -->
+		<zip destfile="${output.dir}/${dita.map.filename.root}.iirds" compress="false" update="false">
+			
+			<!-- add mimetype file -->
+			<zipfileset dir="${dita.plugin.org.dita.iirds.iirdspackage.dir}/resources" >
+				<include name="mimetype"/>
+			</zipfileset>
+			
+			<!-- add content -->
+			<zipfileset dir="${output.dir}" prefix="${iirds.content.path}">
+				<exclude name="${dita.map.filename.root}.iirds"/>
+				<exclude name="META-INF/**/*"/>
+				<exclude name="META-INF"/>
+			</zipfileset>
+			
+			<!-- add metadata -->
+			<zipfileset dir="${output.dir}">
+				<include name="META-INF"/>
+				<include name="META-INF/**/*"/>
+			</zipfileset>
+		</zip>
+	</target>
+	
+	<target name="iirdspackage.htmlprocessing" depends="html5.topic, html5.css">
+	</target>	
+	
+
+	<target name="iirdspackage.clean" depends="iirdspackage.init, build-init" description="Delete all generated files in the outpiut directory except the zip">
+		<delete includeemptydirs="true">
+			<fileset dir="${output.dir}">
+				<exclude name="${dita.map.filename.root}.iirds"/>
+			</fileset>	
+		</delete>
+	</target>
+
+</project>
+

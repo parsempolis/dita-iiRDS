@@ -1,0 +1,398 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="urn:dita.iirds:rng:iirds_subjectScheme.rng" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="urn:dita.iirds:rng:iirds_subjectScheme.rng" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<subjectScheme>
+    <title>Customer-specific IIRDS metadata</title>
+    <topicmeta>
+        <shortdesc>This map provides a template for providing customer-specific metadata for IIRDS,
+            for example, product variants and components.</shortdesc>
+    </topicmeta>
+    <subjectdef keys="product-metadata"
+        rdf-instance-iri="http://iirds.tekom.de/iirds#ProductMetadata">
+        <topicmeta>
+            <navtitle>iiRDS Product Metadata</navtitle>
+        </topicmeta>
+        <subjectdef keys="componentValues" rdf-class-iri="http://iirds.tekom.de/iirds#Component">
+            <topicmeta>
+                <navtitle>iiRDS Component</navtitle>
+            </topicmeta>
+            <subjectdef keys="product-a" rdf-instance-iri="http://myCompany.com/myProjectA#ProductName">
+                <topicmeta>
+                    <navtitle>Product A</navtitle>
+                </topicmeta>
+                <subjectdef keys="component-x" rdf-instance-iri="http://myCompany.com/myProjectA#ComponentX">
+                    <topicmeta>
+                        <navtitle>Component X</navtitle>
+                    </topicmeta>
+                    <subjectdef keys="subcomponent-1"
+                        rdf-instance-iri="http://myCompany.com/myProjectA#Subcomponent1">
+                        <topicmeta>
+                            <navtitle>Subcomponent 1</navtitle>
+                        </topicmeta>
+                    </subjectdef>
+                    <subjectdef keys="subcomponent-1"
+                        rdf-instance-iri="http://myCompany.com/myProjectA#Subcomponent1">
+                        <topicmeta>
+                            <navtitle>Subcomponent 1</navtitle>
+                        </topicmeta>
+                    </subjectdef>
+                    </subjectdef>
+                <subjectdef keys="component-y" rdf-instance-iri="http://myCompany.com/myProjectA#ComponentY">
+                    <topicmeta>
+                        <navtitle>Component Y</navtitle>
+                    </topicmeta>
+                    <subjectdef keys="subcomponent-3"
+                        rdf-instance-iri="http://myCompany.com/myProjectA#Subcomponent3">
+                        <topicmeta>
+                            <navtitle>Subcomponent 3</navtitle>
+                        </topicmeta>
+                    </subjectdef>
+                    <subjectdef keys="subcomponent-4"
+                        rdf-instance-iri="http://myCompany.com/myProjectA#Subcomponent4">
+                        <topicmeta>
+                            <navtitle>Subcomponent 4</navtitle>
+                        </topicmeta>
+                    </subjectdef>
+                </subjectdef>
+            </subjectdef>
+        </subjectdef>
+        
+        <subjectdef keys="product-featureValues"
+            rdf-class-iri="http://iirds.tekom.de/iirds#ProductFeature">
+            <topicmeta>
+                <navtitle>iiRDS Product Feature</navtitle>
+            </topicmeta>
+            <subjectdef keys="feature-1" rdf-instance-iri="http://myCompany.com/myProjectA#Feature1">
+                <topicmeta>
+                    <navtitle>Feature 1</navtitle>
+                </topicmeta>
+                <subjectdef keys="feature-1-1" rdf-instance-iri="http://myCompany.com/myProjectA#Feature1-1">
+                    <topicmeta>
+                        <navtitle>Feature 1-1</navtitle>
+                    </topicmeta>
+                </subjectdef>
+                <subjectdef keys="feature1-2" rdf-instance-iri="http://myCompany.com/myProjectA#Feature1-2">
+                    <topicmeta>
+                        <navtitle>Feature 1-2</navtitle>
+                    </topicmeta>
+                </subjectdef>
+                </subjectdef>
+            <subjectdef keys="feature-2" rdf-instance-iri="http://myCompany.com/myProjectA#Feature2">
+                <topicmeta>
+                    <navtitle>Feature 2</navtitle>
+                </topicmeta>
+                <subjectdef keys="feature2-1" rdf-instance-iri="http://myCompany.com/myProjectA#Feature2-1">
+                    <topicmeta>
+                        <navtitle>Feature 2-1</navtitle>
+                    </topicmeta>
+                </subjectdef>
+              </subjectdef>
+          </subjectdef>
+        
+        
+        <subjectdef keys="product-variantValues"
+            rdf-instance-iri="http://iirds.tekom.de/iirds#ProductVariant">
+            <topicmeta>
+                <navtitle>iiRDS Product Variant</navtitle>
+            </topicmeta>
+            <subjectdef keys="my-project" rdf-instance-iri="http://myCompany.com/myProjectA#AllVariants">
+                <subjectdef keys="variant-1" rdf-instance-iri="http://myCompany.com/myProjectA#Variant1">
+                    <topicmeta>
+                        <navtitle>Variant 1</navtitle>
+                    </topicmeta>
+                    <subjectdef keys="variant-1A" rdf-instance-iri="http://myCompany.com/myProjectA#Variant1A">
+                        <topicmeta>
+                            <navtitle>Variant 1A</navtitle>
+                        </topicmeta>
+                    </subjectdef>
+                    <subjectdef keys="variant-1B" rdf-instance-iri="http://myCompany.com/myProjectA#Variant1B">
+                        <topicmeta>
+                            <navtitle>Variant 1B</navtitle>
+                        </topicmeta>
+                    </subjectdef>
+                  </subjectdef>
+                <subjectdef keys="variant-2"
+                    rdf-instance-iri="http://myCompany.com/myProjectA#Variant2">
+                    <topicmeta>
+                        <navtitle>Variant 2</navtitle>
+                    </topicmeta>
+                    <subjectdef keys="variant-2A" rdf-instance-iri="http://myCompany.com/myProjectA#Variant2A">
+                        <topicmeta>
+                            <navtitle>Variant 2A</navtitle>
+                        </topicmeta>
+                    </subjectdef>
+                    <subjectdef keys="variant-2B" rdf-instance-iri="http://myCompany.com/myProjectA#Variant2B">
+                        <topicmeta>
+                            <navtitle>Variant 2B</navtitle>
+                        </topicmeta>
+                    </subjectdef>
+                </subjectdef>
+            </subjectdef>
+         </subjectdef>
+    </subjectdef>
+  
+    <subjectdef keys="functional-metadata"
+        rdf-instance-iri="http://iirds.tekom.de/iirds#FunctionalMetadata">
+        <topicmeta>
+            <navtitle>iiRDS Functional Metadata</navtitle>
+        </topicmeta>
+        
+        <subjectdef keys="iirds-supply" rdf-instance-iri="http://iirds.tekom.de/iirds#Supply">
+            <topicmeta>
+                <navtitle>iiRDS Supply</navtitle>
+            </topicmeta>
+            <subjectdef keys="operating-supplyValues"
+                rdf-instance-iri="http://iirds.tekom.de/iirds#GenericOperatingSupply">
+                <topicmeta>
+                    <navtitle>iiRDS Supply - Operating Supply</navtitle>
+                </topicmeta>
+                <subjectdef keys="operating-supply-A" rdf-instance-iri="http://myCompany.com/myProjectA#OperatingSupplyA">
+                    <topicmeta>
+                        <navtitle>Operating Supply A</navtitle>
+                    </topicmeta>
+                </subjectdef>
+            </subjectdef>
+            <subjectdef keys="spare-partValues"
+                rdf-instance-iri="http://iirds.tekom.de/iirds#GenericSpartPart">
+                <topicmeta>
+                    <navtitle>iiRDS Supply - Spare Part</navtitle>
+                </topicmeta>
+                <subjectdef keys="spare-part-A" rdf-instance-iri="http://myCompany.com/myProjectA#SparePartA">
+                    <topicmeta>
+                        <navtitle>Spare Part A</navtitle>
+                    </topicmeta>
+                </subjectdef>
+                <subjectdef keys="spare-part-B" rdf-instance-iri="http://myCompany.com/myProjectA#SparePartB">
+                    <topicmeta>
+                        <navtitle>Spare Part B</navtitle>
+                    </topicmeta>
+                </subjectdef>
+                
+            </subjectdef>
+            <subjectdef keys="lubricantValues"
+                rdf-instance-iri="http://iirds.tekom.de/iirds#GenericLubricant">
+                <topicmeta>
+                    <navtitle>iiRDS Supply - Lubricant</navtitle>
+                </topicmeta>
+                <subjectdef keys="lubricant-A" rdf-instance-iri="http://myCompany.com/myProjectA#LubricantA">
+                    <topicmeta>
+                        <navtitle>Lubricant A</navtitle>
+                    </topicmeta>
+                </subjectdef>
+            </subjectdef>
+            <subjectdef keys="consumable-supplyValues"
+                rdf-instance-iri="http://iirds.tekom.de/iirds#GenericConsumableSupply">
+                <topicmeta>
+                    <navtitle>iiRDS Supply - Consumable supply</navtitle>
+                </topicmeta>
+                <subjectdef keys="consumable-supply-A" rdf-instance-iri="http://myCompany.com/myProjectA#ConsumableSupplyA">
+                    <topicmeta>
+                        <navtitle>Consumable Supply A</navtitle>
+                    </topicmeta>
+                </subjectdef>
+            </subjectdef>
+            <subjectdef keys="hardware-toolValues"
+                rdf-instance-iri="http://iirds.tekom.de/iirds#GenericHardwareTool">
+                <topicmeta>
+                    <navtitle>iiRDS Supply - Hardware tool</navtitle>
+                </topicmeta>
+                <subjectdef keys="screw-driver-phillips"
+                    rdf-instance-iri="http://myCompany.com/myProjectA#ScrewDriverPhillips">
+                    <topicmeta>
+                        <navtitle>Phillips Screw Driver</navtitle>
+                    </topicmeta>
+                </subjectdef>
+                <subjectdef keys="screw-driver-flathead"
+                    rdf-instance-iri="http://myCompany.com/myProjectA#ScrewDriverFlatHead">
+                    <topicmeta>
+                        <navtitle>Flat-Head Screw Driver</navtitle>
+                    </topicmeta>
+                </subjectdef>
+                <subjectdef keys="screw-driver-torx"
+                    rdf-instance-iri="http://myCompany.com/myProjectA#ScrewDriverTorx">
+                    <topicmeta>
+                        <navtitle>Torx Screw Driver</navtitle>
+                    </topicmeta>
+                </subjectdef>
+                
+            </subjectdef>
+        </subjectdef>
+        <subjectdef keys="planning-time"
+            rdf-instance-iri="http://iirds.tekom.de/iirds#GenericPlanningTime">
+            <topicmeta>
+                <navtitle>iiRDS Planning time</navtitle>
+            </topicmeta>
+            <subjectdef keys="generic-working-timeValues"
+                rdf-instance-iri="http://iirds.tekom.de/iirds#GenericWorkingTime">
+                <topicmeta>
+                    <navtitle>iiRDS Working Time</navtitle>
+                </topicmeta>
+                <subjectdef keys="10-min-working" rdf-instance-iri="http://myCompany.com/myProjectA#10MinWorking">
+                    <topicmeta>
+                        <navtitle>10 Minutes Working Time</navtitle>
+                    </topicmeta>
+                </subjectdef>
+                <subjectdef keys="20-min-working" rdf-instance-iri="http://myCompany.com/myProjectA#20MinWorking">
+                    <topicmeta>
+                        <navtitle>20 Minutes Working Time</navtitle>
+                    </topicmeta>
+                </subjectdef>
+            </subjectdef>
+            <subjectdef keys="setup-timeValues"
+                rdf-instance-iri="http://iirds.tekom.de/iirds#GenericSetupTime">
+                <topicmeta>
+                    <navtitle>iiRDS Planning Setup Time</navtitle>
+                </topicmeta>
+                <subjectdef keys="10-min-setup" rdf-instance-iri="http://myCompany.com/myProjectA#10MinSetup">
+                    <topicmeta>
+                        <navtitle>10 Minutes Setup Time</navtitle>
+                    </topicmeta>
+                </subjectdef>
+                <subjectdef keys="20-min-setup" rdf-instance-iri="http://myCompany.com/myProjectA#20MinSetup">
+                    <topicmeta>
+                        <navtitle>20 Minutes Working Time</navtitle>
+                    </topicmeta>
+                </subjectdef>
+            </subjectdef>
+            <subjectdef keys="down-timeValues"
+                rdf-instance-iri="http://iirds.tekom.de/iirds#GenericDownTime">
+                <topicmeta>
+                    <navtitle>iiRDS Planning Down Time</navtitle>
+                </topicmeta>
+                <subjectdef keys="10-min-down" rdf-instance-iri="http://myCompany.com/myProjectA#10MinDown">
+                    <topicmeta>
+                        <navtitle>10 Minutes Down Time</navtitle>
+                    </topicmeta>
+                </subjectdef>
+                <subjectdef keys="20-min-down" rdf-instance-iri="http://myCompany.com/myProjectA#20MinDown">
+                    <topicmeta>
+                        <navtitle>20 Minutes Down Time</navtitle>
+                    </topicmeta>
+                </subjectdef>
+            </subjectdef>
+            <subjectdef keys="maintenance-intervalValues"
+                rdf-instance-iri="http://iirds.tekom.de/iirds#GenericMaintenanceInterval">
+                <!--            Wartungsintervall-->
+                <topicmeta>
+                    <navtitle>iiRDS Planning Maintenance interval</navtitle>
+                </topicmeta>
+                <subjectdef keys="maintenance-interval-A" rdf-instance-iri="http://myCompany.com/myProjectA#Maintenance-IntervalA">
+                    <topicmeta>
+                        <navtitle>Maintenance-Interval A</navtitle>
+                    </topicmeta>
+                </subjectdef>
+            </subjectdef>
+        </subjectdef>
+        <subjectdef keys="qualification"
+            rdf-instance-iri="http://iirds.tekom.de/iirds#Qualification">
+            <topicmeta>
+                <navtitle>iiRDS Qualification</navtitle>
+            </topicmeta>
+            <subjectdef keys="skill-levelValues"
+                rdf-instance-iri="http://iirds.tekom.de/iirds#GenericSkillLevel">
+                <topicmeta>
+                    <navtitle>iiRDS Qualification Skill level</navtitle>
+                </topicmeta>
+                <subjectdef keys="unskilled" rdf-instance-iri="http://myCompany.com/myProjectA#Unskilled">
+                    <topicmeta>
+                        <navtitle>Unskilled</navtitle>
+                    </topicmeta>
+                </subjectdef>
+                <subjectdef keys="trained" rdf-instance-iri="http://myCompany.com/myProjectA#Trained">
+                    <topicmeta>
+                        <navtitle>Trained</navtitle>
+                    </topicmeta>
+                </subjectdef>
+            </subjectdef>
+            <subjectdef keys="roleValues" rdf-instance-iri="http://iirds.tekom.de/iirds#GenericRole">
+                <topicmeta>
+                    <navtitle>iiRDS Qualification Role</navtitle>
+                </topicmeta>
+                <subjectdef keys="service-technician"
+                    rdf-instance-iri="http://myCompany.com/myProjectA#ServiceTechnician">
+                    <topicmeta>
+                        <navtitle>Service technician</navtitle>
+                    </topicmeta>
+                </subjectdef>
+                <subjectdef keys="operator" rdf-instance-iri="http://myCompany.com/myProjectA#Operator">
+                    <topicmeta>
+                        <navtitle>Operator</navtitle>
+                    </topicmeta>
+                </subjectdef>
+            </subjectdef>
+        </subjectdef>
+    </subjectdef>
+    <!--    The following values map the taxnonomy values defined above to a specific attribute.-->
+    <enumerationdef>
+        <attributedef name="iirds-component"
+            rdf-property-iri="http://iirds.tekom.de/iirds#relates-to-component"/>
+        <subjectdef keyref="componentValues"/>
+    </enumerationdef>
+    
+    <enumerationdef>
+        <attributedef name="product-feature"
+            rdf-property-iri="http://iirds.tekom.de/iirds#relates-to-product-feature"/>
+        <subjectdef keyref="product-featureValues"/>
+    </enumerationdef>
+    <enumerationdef>
+        <attributedef name="product-variant"
+            rdf-property-iri="http://iirds.tekom.de/iirds#relates-to-product-variant"/>
+        <subjectdef keyref="product-variantValues"/>
+    </enumerationdef>
+    
+    <enumerationdef>
+        <attributedef name="operating-supply"
+            rdf-property-iri="http://iirds.tekom.de/iirds#relates-to-supply"/>
+        <subjectdef keyref="operating-supplyValues"/>
+    </enumerationdef>
+    <enumerationdef>
+        <attributedef name="spare-part"
+            rdf-property-iri="http://iirds.tekom.de/iirds#relates-to-supply"/>
+        <subjectdef keyref="spare-partValues"/>
+    </enumerationdef>
+    <enumerationdef>
+        <attributedef name="lubricant"
+            rdf-property-iri="http://iirds.tekom.de/iirds#relates-to-supply"/>
+        <subjectdef keyref="lubricantValues"/>
+    </enumerationdef>
+    <enumerationdef>
+        <attributedef name="consumable-supply"
+            rdf-property-iri="http://iirds.tekom.de/iirds#relates-to-supply"/>
+        <subjectdef keyref="consumable-supplyValues"/>
+    </enumerationdef>
+    <enumerationdef>
+        <attributedef name="hardware-tool"
+            rdf-property-iri="http://iirds.tekom.de/iirds#relates-to-supply"/>
+        <subjectdef keyref="hardware-toolValues"/>
+    </enumerationdef>
+    <enumerationdef>
+        <attributedef name="planning-down-time"
+            rdf-property-iri="http://iirds.tekom.de/iirds#has-planning-time"/>
+        <subjectdef keyref="down-timeValues"/>
+    </enumerationdef>
+    <enumerationdef>
+        <attributedef name="planning-maintenance-interval"
+            rdf-property-iri="http://iirds.tekom.de/iirds#has-planning-time"/>
+        <subjectdef keyref="maintenance-intervalValues"/>
+    </enumerationdef>
+    <enumerationdef>
+        <attributedef name="planning-setup-time"
+            rdf-property-iri="http://iirds.tekom.de/iirds#has-planning-time"/>
+        <subjectdef keyref="setup-timeValues"/>
+    </enumerationdef>
+    <enumerationdef>
+        <attributedef name="planning-working-time"
+            rdf-property-iri="http://iirds.tekom.de/iirds#has-planning-time"/>
+        <subjectdef keyref="generic-working-timeValues"/>
+    </enumerationdef>
+    <enumerationdef>
+        <attributedef name="qualification-role"
+            rdf-property-iri="http://iirds.tekom.de/iirds#relates-to-qualification"/>
+        <subjectdef keyref="roleValues"/>
+    </enumerationdef>
+    <enumerationdef>
+        <attributedef name="qualification-skilllevel"
+            rdf-property-iri="http://iirds.tekom.de/iirds#relates-to-qualification"/>
+        <subjectdef keyref="skill-levelValues"/>
+    </enumerationdef>
+</subjectScheme>

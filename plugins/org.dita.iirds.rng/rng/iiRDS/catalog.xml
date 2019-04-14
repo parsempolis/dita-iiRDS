@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+        <!--parson DITA IIRDS Catalog-->
+
+        <group>
+                <!-- System ID (URL) catalog entries for the IIRDS Domain Specialization project-->
+
+
+                <!-- Element Spezialisation domain -->
+                <system systemId="urn:dita.iirds:rng:iirdsElementsDomain.rng" uri="rng/iirdsElementsDomain.rng"/>
+
+                <!-- Attribute Specialization Domains-->
+                <system systemId="urn:dita.iirds:rng:iirdsAttDomain.rng"
+                        uri="rng/iirdsAttDomain.rng"/>
+                
+                <!-- Attribute Specialization Domains-->
+                <system systemId="urn:dita.iirds:rng:iirdsMappingAttDomain.rng"
+                        uri="rng/iirdsMappingAttDomain.rng"/>
+          </group>
+
+
+        <group>
+                <!-- Public ID (URN) catalog entries for the IIRDS Domain Specialization project-->
+
+
+                <!-- Spezialisation domain -->
+                <uri name="urn:dita.iirds:rng:iirdsElementsDomain.rng" uri="rng/iirdsElementsDomain.rng"/>
+                
+                <!-- Attribute Specialization Domains-->
+                <uri name="urn:dita.iirds:rng:iirdsAttDomain.rng"
+                        uri="rng/iirdsAttDomain.rng"/>
+                
+                <!-- Mapping attribute Specialization Domains-->
+                <uri name="urn:dita.iirds:rng:iirdsMappingAttDomain.rng"
+                        uri="rng/iirdsMappingAttDomain.rng"/>
+            </group>
+
+</catalog>

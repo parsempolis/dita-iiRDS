@@ -1,0 +1,1156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="urn:oasis:names:tc:dita:rng:vocabularyModuleDesc.rng"
+                         schematypens="http://relaxng.org/ns/structure/1.0"?>
+<grammar xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"
+  xmlns:dita="http://dita.oasis-open.org/architecture/2005/"
+  xmlns="http://relaxng.org/ns/structure/1.0">
+  <moduleDesc xmlns="http://dita.oasis-open.org/architecture/2005/">
+    <moduleTitle>IIRDS Domain for DITA</moduleTitle>
+    <headerComment xml:space="preserve"><![CDATA[
+=============================================================
+                   HEADER                                    
+=============================================================
+MODULE:    IIRDS Domain for DITA
+VERSION:   0.9                                             
+DATE:      April 2019                                    
+
+ BASE VERSION:
+   Darwin Information Typing Architecture (DITA) Version 1.3
+   OASIS Committee Specification 01
+   21 August 2015 
+   Copyright (c) OASIS Open 2015. All rights reserved. 
+   Source: http://docs.oasis-open.org/dita/dita/v1.3/cs01/dita-v1.3-csprd01-part0-overview.html
+=============================================================
+SYSTEM:     Darwin Information Typing Architecture (DITA)    
+                                                             
+PURPOSE:    Declaring the elements and specialization        
+            attributes of the IIRDS Domain            
+
+=============================================================]]>
+</headerComment>
+    <moduleMetadata>
+      <moduleType>elementdomain</moduleType>
+      <moduleShortName>iirds-d</moduleShortName>
+      <modulePublicIds>
+        <!--        <dtdMod>-//DITA-IIRDS//ELEMENTS DITA<var presep=" " name="ditaver"/> IIRDS Domain//EN</dtdMod>-->
+        <!--        <dtdEnt>-//DITA-IIRDS//ENTITIES DITA<var presep=" " name="ditaver"/> IIRDS Domain//EN</dtdEnt>-->
+        <!--        <xsdMod>urn:dita.iirds:rng:iirdsDomain.xsd<var presep=":" name="ditaver"/></xsdMod>-->
+        <!--        <rncMod>urn:dita.iirds:rng:iirdsDomain.rnc<var presep=":" name="ditaver"/></rncMod>-->
+        <rngMod>urn:dita.iirds:rng:iirdsElementsDomain.rng<var presep=":" name="ditaver"/></rngMod>
+      </modulePublicIds>
+      <domainsContribution>(topic iirds-d)</domainsContribution>
+    </moduleMetadata>
+  </moduleDesc>
+  <div>
+    <a:documentation>DOMAIN EXTENSION PATTERNS</a:documentation>
+    <div>
+      <a:documentation>Extension of data element</a:documentation>
+      <define name="data" combine="choice">
+        <zeroOrMore>
+          <ref name="iirds-d-elements"/>
+          <!--<choice>
+            <ref name="iirds-d-functionalmeta"/>
+            <ref name="iirds-d-productmeta"/>
+            <ref name="iirds-d-adminmeta"/>
+          </choice>-->
+        </zeroOrMore>
+      </define>
+    </div>
+   <div><a:documentation>Group to contain complex iiRDS elements, i.e. elements that contain child elements. Everything else is tored in attributes.</a:documentation>
+     <define name="iirds-d-elements">
+       <ref name="iirds-metadata.element"/>
+     </define>
+   </div> 
+     <!--<div>
+      <a:documentation>Group elements that are available in Product Metadata, Functional Metadata, 
+        Information Type Metadata, and Administrative Metadata.</a:documentation>
+      <define name="iirds-d-functionalmeta">
+        <ref name="iirds-functionalmeta.element"/>
+      </define>
+      <define name="iirds-d-information-type">
+        <ref name="iirds-information-type.element"/>
+      </define>
+      <define name="iirds-d-productmeta">
+        <ref name="iirds-productmeta.element"/>
+      </define>
+      <define name="iirds-d-adminmeta">
+        <ref name="iirds-adminmeta.element"/>
+      </define>
+    </div>-->
+  </div>
+  <div>
+    <a:documentation>ELEMENT TYPE NAME PATTERNS</a:documentation>
+    <div>
+      <a:documentation>All Elements in Information Type Metadata</a:documentation>
+      <!--<define name="iirds-information-type">
+        <ref name="iirds-information-type.element"/>
+      </define>-->
+      <!--<define name="document-type">
+        <ref name="document-type.element"/>
+      </define>-->
+      <!--<define name="information-subject">
+        <ref name="information-subject.element"/>
+      </define>-->
+    </div>
+    <div>
+      <a:documentation>All Elements in Functional Metadata</a:documentation>
+      <!--<define name="iirds-functionalmeta">
+        <ref name="iirds-functionalmeta.element"/>
+      </define>-->
+      <define name="event">
+        <ref name="event.element"/>
+      </define>
+      <define name="event-type">
+        <ref name="event-type.element"/>
+      </define>
+      <define name="event-code">
+        <ref name="event-code.element"/>
+      </define>
+      <!--<define name="iirds-supplies">
+        <ref name="iirds-supplies.element"/>
+      </define>-->
+      <!--<define name="operating-supply">
+        <ref name="operating-supply.element"/>
+      </define>-->
+      <!--<define name="spare-part">
+        <ref name="spare-part.element"/>
+      </define>-->
+      <!--<define name="lubricant">
+        <ref name="lubricant.element"/>
+      </define>-->
+      <!--<define name="consumable-supply">
+        <ref name="consumable-supply.element"/>
+      </define>-->
+      <!--<define name="hardware-tool">
+        <ref name="hardware-tool.element"/>
+      </define>-->
+      <!--<define name="planning-time">
+        <ref name="planning-time.element"/>
+      </define>-->
+      <!--<define name="working-time">
+        <ref name="working-time.element"/>
+      </define>-->
+      <!--<define name="setup-time">
+        <ref name="setup-time.element"/>
+      </define>-->
+      <!--<define name="down-time">
+        <ref name="down-time.element"/>
+      </define>-->
+      <!--<define name="maintenance-interval">
+        <ref name="maintenance-interval.element"/>
+      </define>-->
+      <define name="qualification">
+        <ref name="qualification.element"/>
+      </define>
+      <define name="qualification-role">
+        <ref name="qualification-role.element"/>
+      </define>
+      <define name="qualification-skilllevel">
+        <ref name="qualification-skilllevel.element"/>
+      </define>
+    </div>
+    <div>
+      <a:documentation>All Elements in Product Metadata</a:documentation>
+      <!--<define name="iirds-productmeta">
+        <ref name="iirds-productmeta.element"/>
+      </define>-->
+      <!--<define name="iirds-component">
+        <ref name="iirds-component.element"/>
+      </define>-->
+      <!--<define name="product-lifecycle-phase">
+        <ref name="product-lifecycle-phase.element"/>
+      </define>-->
+      <!--<define name="product-feature">
+        <ref name="product-feature.element"/>
+      </define>-->
+      <!--<define name="product-variant">
+        <ref name="product-variant.element"/>
+      </define>-->
+    </div>
+    <div>
+      <a:documentation> All Elements in Administrative Metadata</a:documentation>
+      <!--<define name="iirds-adminmeta">
+        <ref name="iirds-adminmeta.element"/>
+      </define>-->
+      <define name="identity">
+        <ref name="identity.element"/>
+      </define>
+      <define name="identity-identifier">
+        <ref name="identity-identifier.element"/>
+      </define>
+      <define name="identity-domain">
+        <ref name="identity-domain.element"/>
+      </define>
+      <define name="party">
+        <ref name="party.element"/>
+      </define>
+      <define name="party-role">
+        <ref name="party-role.element"/>
+      </define>
+      <define name="content-lifecycle-status">
+        <ref name="content-lifecycle-status.element"/>
+      </define>
+      <define name="content-lifecycle-status-value">
+        <ref name="content-lifecycle-status-value.element"/>
+      </define>
+      <define name="status-comment">
+        <ref name="status-comment.element"/>
+      </define>
+      <define name="status-purpose">
+        <ref name="status-purpose.element"/>
+      </define>
+    </div>
+  </div>
+  <div>
+    <a:documentation>ELEMENT TYPE DECLARATIONS</a:documentation>
+    <div>
+      <a:documentation> LONG NAME: IIRDS Metadata Element</a:documentation>
+      <define name="iirds-metadata.element">
+        <element name="iirds-metadata" dita:longName="iiRDS Metadata Elements">
+          <ref name="iirds-metadata.content"/>
+          <ref name="iirds-metadata.attlist"/>
+        </element>
+      </define>
+      <define name="iirds-metadata.content">
+        <zeroOrMore>
+          <choice>
+            <ref name="event.element"/>
+            <ref name="qualification.element"/>
+            <ref name="identity.element"/>
+            <ref name="content-lifecycle-status.element"/>
+            <ref name="party.element"/>
+          </choice>
+          <!--<choice>
+            <ref name="document-type.element"/>
+            <ref name="information-subject.element"/>
+          </choice>-->
+        </zeroOrMore>
+      </define>
+      <define name="iirds-metadata.attlist" combine="interleave">
+        <ref name="iirds-metadata.attributes"/>
+      </define>
+      <define name="iirds-metadata.attributes">
+        <ref name="univ-atts"/>
+        <optional>
+          <attribute name="class"
+            a:defaultValue="+ topic/data iirds-d/iirds-data iirds-d/iirds-adminmeta "/>
+        </optional>
+<!--        ACHTUNG: Class-Attribute vorübergehend auf adminmeta gesetzt, weil das andere Plugin noch nicht nachgezogen wurde-->
+      </define>
+    </div>
+    
+    <!--<div>
+      <a:documentation> LONG NAME: IIRDS Information Type Metadata Element</a:documentation>
+      <define name="iirds-information-type.element">
+        <element name="iirds-information-type" dita:longName="iiRDS Information Type Metadata">
+          <ref name="iirds-information-type.content"/>
+          <ref name="iirds-information-type.attlist"/>
+        </element>
+      </define>
+      <define name="iirds-information-type.content">
+        <zeroOrMore>
+          <choice>
+            <ref name="document-type.element"/>
+            <ref name="information-subject.element"/>
+          </choice>
+        </zeroOrMore>
+      </define>
+      <define name="iirds-information-type.attlist" combine="interleave">
+        <ref name="iirds-information-type.attributes"/>
+      </define>
+      <define name="iirds-information-type.attributes">
+        <ref name="univ-atts"/>
+        <optional>
+          <attribute name="class"
+            a:defaultValue="+ topic/data iirds-d/iirds-data iirds-d/iirds-information-type "/>
+        </optional>
+      </define>
+    </div>-->
+    <!--<div>
+      <a:documentation> LONG NAME: Product Metadata Element</a:documentation>
+      <define name="iirds-productmeta.element">
+        <element name="iirds-productmeta" dita:longName="iiRDS Product Metadata">
+          <ref name="iirds-productmeta.content"/>
+          <ref name="iirds-productmeta.attlist"/>
+        </element>
+      </define>
+      <define name="iirds-productmeta.content">
+        <zeroOrMore>
+          <choice>
+            <ref name="iirds-component.element"/>
+            <ref name="product-lifecycle-phase.element"/>
+            <ref name="product-feature.element"/>
+            <ref name="product-variant.element"/>
+          </choice>
+        </zeroOrMore>
+      </define>
+      <define name="iirds-productmeta.attlist" combine="interleave">
+        <ref name="iirds-productmeta.attributes"/>
+      </define>
+      <define name="iirds-productmeta.attributes">
+        <ref name="univ-atts"/>
+        <optional>
+          <attribute name="class"
+            a:defaultValue="+ topic/data iirds-d/iirds-data iirds-d/iirds-productmeta "/>
+        </optional>
+      </define>
+    </div>-->
+    <!--<div>
+      <a:documentation> LONG NAME: Functional Metadata Element</a:documentation>
+      <define name="iirds-functionalmeta.element">
+        <element name="iirds-functionalmeta" dita:longName="iiRDS Functional Metadata">
+          <ref name="iirds-functionalmeta.content"/>
+          <ref name="iirds-functionalmeta.attlist"/>
+        </element>
+      </define>
+      <define name="iirds-functionalmeta.content">
+        <zeroOrMore>
+          <choice>
+            <ref name="event.element"/>
+            <ref name="iirds-supplies.element"/>
+            <ref name="planning-time.element"/>
+            <ref name="qualification.element"/>
+          </choice>
+        </zeroOrMore>
+      </define>
+      <define name="iirds-functionalmeta.attlist" combine="interleave">
+        <ref name="iirds-functionalmeta.attributes"/>
+      </define>
+      <define name="iirds-functionalmeta.attributes">
+        <ref name="univ-atts"/>
+        <optional>
+          <attribute name="class"
+            a:defaultValue="+ topic/data iirds-d/iirds-data iirds-d/iirds-functionalmeta "/>
+        </optional>
+      </define>
+    </div>-->
+    <!--<div>
+      <a:documentation> LONG NAME: Administrative Metadata Element</a:documentation>
+      <define name="iirds-adminmeta.element">
+        <element name="iirds-adminmeta" dita:longName="iiRDS Administrative Metadata">
+          <ref name="iirds-adminmeta.content"/>
+          <ref name="iirds-adminmeta.attlist"/>
+        </element>
+      </define>
+      <define name="iirds-adminmeta.content">
+        <zeroOrMore>
+          <choice>
+            <ref name="identity.element"/>
+            <ref name="party.element"/>
+            <ref name="content-lifecycle-status.element"/>            
+          </choice>
+        </zeroOrMore>
+      </define>
+      <define name="iirds-adminmeta.attlist" combine="interleave">
+        <ref name="iirds-adminmeta.attributes"/>
+      </define>
+      <define name="iirds-adminmeta.attributes">
+        <ref name="univ-atts"/>
+        <optional>
+          <attribute name="class"
+            a:defaultValue="+ topic/data iirds-d/iirds-data iirds-d/iirds-adminmeta "/>
+        </optional>
+      </define>
+    </div>-->
+    <div>
+      <a:documentation>Metadata elements within Information Type Metadata</a:documentation>
+      <!--<div>
+        <a:documentation> LONG NAME: Document Type Element</a:documentation>
+        <define name="document-type.element">
+          <element name="document-type" dita:longName="iiRDS Document Type">
+            <ref name="document-type.content"/>
+            <ref name="document-type.attlist"/>
+          </element>
+        </define>
+        <define name="document-type.content">
+          <ref name="iirds-metadata.cnt"/>
+        </define>
+        <define name="document-type.attlist" combine="interleave">
+          <ref name="document-type.attributes"/>
+        </define>
+        <define name="document-type.attributes">
+          <ref name="univ-atts"/>
+          <optional>
+            <attribute name="class"
+              a:defaultValue="+ topic/data iirds-d/iirds-data iirds-d/document-type "/>
+          </optional>
+        </define>
+      </div>-->
+      <!--<div>
+        <a:documentation> LONG NAME: IIRDS Information Subject</a:documentation>
+        <define name="information-subject.element">
+          <element name="information-subject" dita:longName="iiRDS Information Subject Element">
+            <ref name="information-subject.content"/>
+            <ref name="information-subject.attlist"/>
+          </element>
+        </define>
+        <define name="information-subject.content">
+          <ref name="iirds-metadata.cnt"/>
+        </define>
+        <define name="information-subject.attlist" combine="interleave">
+          <ref name="information-subject.attributes"/>
+        </define>
+        <define name="information-subject.attributes">
+          <ref name="univ-atts"/>
+          <optional>
+            <attribute name="class"
+              a:defaultValue="+ topic/data iirds-d/iirds-data iirds-d/information-subject "/>
+          </optional>
+        </define>
+      </div>-->
+    </div>
+    <div>
+      <a:documentation>Metadata elements within Functional Metadata</a:documentation>
+      <div>
+        <a:documentation> LONG NAME: IIRDS Event Subclass</a:documentation>
+        <define name="event.element">
+          <element name="event" dita:longName="iiRDS Event Subclass">
+            <ref name="event.content"/>
+            <ref name="event.attlist"/>
+          </element>
+        </define>
+        <define name="event.content">
+               <a:documentation>Each event should have event type and event code. As a start, both are optional, to make it easier for testing
+               </a:documentation>     <optional>
+            <ref name="event-code.element"/>
+          </optional>
+          <optional>
+            <ref name="event-type.element"/>
+          </optional>
+        </define>
+        <define name="event.attlist" combine="interleave">
+          <ref name="event.attributes"/>
+        </define>
+        <define name="event.attributes">
+          <ref name="univ-atts"/>
+          <optional>
+            <attribute name="class" a:defaultValue="+ topic/data iirds-d/iirds-data iirds-d/event "
+            />
+          </optional>
+        </define>
+      </div>
+      <div>
+        <a:documentation> LONG NAME: IIRDS Event Code Element</a:documentation>
+        <define name="event-code.element">
+          <element name="event-code" dita:longName="iiRDS Event Code Element">
+            <ref name="event-code.content"/>
+            <ref name="event-code.attlist"/>
+          </element>
+        </define>
+        <define name="event-code.content">
+          <ref name="iirds-metadata.cnt"/>
+        </define>
+        <define name="event-code.attlist" combine="interleave">
+          <ref name="event-code.attributes"/>
+        </define>
+        <define name="event-code.attributes">
+          <ref name="univ-atts"/>
+          <optional>
+            <attribute name="class"
+              a:defaultValue="+ topic/data iirds-d/iirds-data iirds-d/event iirds-d/event-code "/>
+          </optional>
+        </define>
+      </div>
+      <div>
+        <a:documentation> LONG NAME: IIRDS Event Type Element</a:documentation>
+        <define name="event-type.element">
+          <element name="event-type" dita:longName="iiRDS Event Type Element">
+            <ref name="event-type.content"/>
+            <ref name="event-type.attlist"/>
+          </element>
+        </define>
+        <define name="event-type.content">
+          <ref name="iirds-metadata.cnt"/>
+        </define>
+        <define name="event-type.attlist" combine="interleave">
+          <ref name="event-type.attributes"/>
+        </define>
+        <define name="event-type.attributes">
+          <ref name="univ-atts"/>
+          <optional>
+            <attribute name="class"
+              a:defaultValue="+ topic/data iirds-d/iirds-data iirds-d/event iirds-d/event-type "/>
+          </optional>
+        </define>
+      </div>
+      <!--<div>
+        <a:documentation> LONG NAME: Supply Element</a:documentation>
+        <define name="iirds-supplies.element">
+          <element name="iirds-supplies" dita:longName="iiRDS Supplies">
+            <ref name="iirds-supplies.content"/>
+            <ref name="iirds-supplies.attlist"/>
+          </element>
+        </define>
+        <define name="iirds-supplies.content">
+          <oneOrMore>
+            <choice>
+              <ref name="operating-supply.element"/>
+              <ref name="spare-part.element"/>
+              <ref name="lubricant.element"/>
+              <ref name="consumable-supply.element"/>
+              <ref name="hardware-tool.element"/>
+          </choice>
+          </oneOrMore>
+        </define>
+        <define name="iirds-supplies.attlist" combine="interleave">
+          <ref name="iirds-supplies.attributes"/>
+        </define>
+        <define name="iirds-supplies.attributes">
+          <ref name="univ-atts"/>
+          <optional>
+            <attribute name="class"
+              a:defaultValue="+ topic/data iirds-d/iirds-data iirds-d/iirds-supplies "/>
+          </optional>
+        </define>
+      </div>-->
+      <!--<div>
+        <a:documentation> LONG NAME: IIRDS Operating Supply Element</a:documentation>
+        <define name="operating-supply.element">
+          <element name="operating-supply" dita:longName="iiRDS Operating Supply Element">
+            <ref name="operating-supply.content"/>
+            <ref name="operating-supply.attlist"/>
+          </element>
+        </define>
+        <define name="operating-supply.content">
+          <ref name="iirds-metadata.cnt"/>
+        </define>
+        <define name="operating-supply.attlist" combine="interleave">
+          <ref name="operating-supply.attributes"/>
+        </define>
+        <define name="operating-supply.attributes">
+          <ref name="univ-atts"/>
+          <optional>
+            <attribute name="class"
+              a:defaultValue="+ topic/data iirds-d/iirds-data iirds-d/event iirds-d/operating-supply "
+            />
+          </optional>
+        </define>
+      </div>-->
+      <!--<div>
+        <a:documentation> LONG NAME: IIRDS Spare Part Element</a:documentation>
+        <define name="spare-part.element">
+          <element name="spare-part" dita:longName="iiRDS Spare Part Element">
+            <ref name="spare-part.content"/>
+            <ref name="spare-part.attlist"/>
+          </element>
+        </define>
+        <define name="spare-part.content">
+          <ref name="iirds-metadata.cnt"/>
+        </define>
+        <define name="spare-part.attlist" combine="interleave">
+          <ref name="spare-part.attributes"/>
+        </define>
+        <define name="spare-part.attributes">
+          <ref name="univ-atts"/>
+          <optional>
+            <attribute name="class"
+              a:defaultValue="+ topic/data iirds-d/iirds-data iirds-d/event iirds-d/spare-part "/>
+          </optional>
+        </define>
+      </div>-->
+      <!--<div>
+        <a:documentation> LONG NAME: IIRDS Lubricant Element</a:documentation>
+        <define name="lubricant.element">
+          <element name="lubricant" dita:longName="iiRDS Lubricant Element">
+            <ref name="lubricant.content"/>
+            <ref name="lubricant.attlist"/>
+          </element>
+        </define>
+        <define name="lubricant.content">
+          <ref name="iirds-metadata.cnt"/>
+        </define>
+        <define name="lubricant.attlist" combine="interleave">
+          <ref name="lubricant.attributes"/>
+        </define>
+        <define name="lubricant.attributes">
+          <ref name="univ-atts"/>
+          <optional>
+            <attribute name="class"
+              a:defaultValue="+ topic/data iirds-d/iirds-data iirds-d/event iirds-d/lubricant "/>
+          </optional>
+        </define>
+      </div>-->
+      <!--<div>
+        <a:documentation> LONG NAME: IIRDS Consumable Supply Element</a:documentation>
+        <define name="consumable-supply.element">
+          <element name="consumable-supply" dita:longName="iiRDS Consumable Supply Element">
+            <ref name="consumable-supply.content"/>
+            <ref name="consumable-supply.attlist"/>
+          </element>
+        </define>
+        <define name="consumable-supply.content">
+          <ref name="iirds-metadata.cnt"/>
+        </define>
+        <define name="consumable-supply.attlist" combine="interleave">
+          <ref name="consumable-supply.attributes"/>
+        </define>
+        <define name="consumable-supply.attributes">
+          <ref name="univ-atts"/>
+          <optional>
+            <attribute name="class"
+              a:defaultValue="+ topic/data iirds-d/iirds-data iirds-d/event iirds-d/consumable-supply "
+            />
+          </optional>
+        </define>
+      </div>-->
+      <!--<div>
+        <a:documentation> LONG NAME: IIRDS Hardware Tool Element</a:documentation>
+        <define name="hardware-tool.element">
+          <element name="hardware-tool" dita:longName="iiRDS Hardware Tool Element">
+            <ref name="hardware-tool.content"/>
+            <ref name="hardware-tool.attlist"/>
+          </element>
+        </define>
+        <define name="hardware-tool.content">
+          <ref name="iirds-metadata.cnt"/>
+        </define>
+        <define name="hardware-tool.attlist" combine="interleave">
+          <ref name="hardware-tool.attributes"/>
+        </define>
+        <define name="hardware-tool.attributes">
+          <ref name="univ-atts"/>
+          <optional>
+            <attribute name="class"
+              a:defaultValue="+ topic/data iirds-d/iirds-data iirds-d/event iirds-d/hardware-tool "
+            />
+          </optional>
+        </define>
+      </div>-->
+      <!--<div>
+        <a:documentation> LONG NAME: Planning Time Element</a:documentation>
+        <define name="planning-time.element">
+          <element name="planning-time" dita:longName="iiRDS Planning Time">
+            <ref name="planning-time.content"/>
+            <ref name="planning-time.attlist"/>
+          </element>
+        </define>
+        <define name="planning-time.content">
+          <oneOrMore>
+            <choice>
+              <ref name="working-time.element"/>
+              <ref name="setup-time.element"/>
+              <ref name="down-time.element"/>
+              <ref name="maintenance-interval.element"/>
+            </choice>
+            </oneOrMore>
+          
+        </define>
+        <define name="planning-time.attlist" combine="interleave">
+          <ref name="planning-time.attributes"/>
+        </define>
+        <define name="planning-time.attributes">
+          <ref name="univ-atts"/>
+          <optional>
+            <attribute name="class"
+              a:defaultValue="+ topic/data iirds-d/iirds-data iirds-d/planning-time "/>
+          </optional>
+        </define>
+      </div>-->
+      <!--<div>
+        <a:documentation> LONG NAME: IIRDS Working Time Element</a:documentation>
+        <define name="working-time.element">
+          <element name="working-time" dita:longName="iiRDS Working Time Element">
+            <ref name="working-time.content"/>
+            <ref name="working-time.attlist"/>
+          </element>
+        </define>
+        <define name="working-time.content">
+          <ref name="iirds-metadata.cnt"/>
+        </define>
+        <define name="working-time.attlist" combine="interleave">
+          <ref name="working-time.attributes"/>
+        </define>
+        <define name="working-time.attributes">
+          <ref name="univ-atts"/>
+          <optional>
+            <attribute name="class"
+              a:defaultValue="+ topic/data iirds-d/iirds-data iirds-d/working-time "/>
+          </optional>
+        </define>
+      </div>-->
+      <!--<div>
+        <a:documentation> LONG NAME: IIRDS Setup Time Element</a:documentation>
+        <define name="setup-time.element">
+          <element name="setup-time" dita:longName="iiRDS Planning Time > Setup Time Element">
+            <ref name="setup-time.content"/>
+            <ref name="setup-time.attlist"/>
+          </element>
+        </define>
+        <define name="setup-time.content">
+          <ref name="iirds-metadata.cnt"/>
+        </define>
+        <define name="setup-time.attlist" combine="interleave">
+          <ref name="setup-time.attributes"/>
+        </define>
+        <define name="setup-time.attributes">
+          <ref name="univ-atts"/>
+          <optional>
+            <attribute name="class"
+              a:defaultValue="+ topic/data iirds-d/iirds-data iirds-d/setup-time "/>
+          </optional>
+        </define>
+      </div>-->
+      <!--<div>
+        <a:documentation> LONG NAME: IIRDS Down Time Element</a:documentation>
+        <define name="down-time.element">
+          <element name="down-time" dita:longName="iiRDS Down Time Element">
+            <ref name="down-time.content"/>
+            <ref name="down-time.attlist"/>
+          </element>
+        </define>
+        <define name="down-time.content">
+          <ref name="iirds-metadata.cnt"/>
+        </define>
+        <define name="down-time.attlist" combine="interleave">
+          <ref name="down-time.attributes"/>
+        </define>
+        <define name="down-time.attributes">
+          <ref name="univ-atts"/>
+          <optional>
+            <attribute name="class"
+              a:defaultValue="+ topic/data iirds-d/iirds-data iirds-d/down-time "/>
+          </optional>
+        </define>
+      </div>-->
+      <!--<div>
+        <a:documentation> LONG NAME: IIRDS Maintenance Interval Element</a:documentation>
+        <define name="maintenance-interval.element">
+          <element name="maintenance-interval" dita:longName="iiRDS Maintenance Interval Element">
+            <ref name="maintenance-interval.content"/>
+            <ref name="maintenance-interval.attlist"/>
+          </element>
+        </define>
+        <define name="maintenance-interval.content">
+          <ref name="iirds-metadata.cnt"/>
+        </define>
+        <define name="maintenance-interval.attlist" combine="interleave">
+          <ref name="maintenance-interval.attributes"/>
+        </define>
+        <define name="maintenance-interval.attributes">
+          <ref name="univ-atts"/>
+          <optional>
+            <attribute name="class"
+              a:defaultValue="+ topic/data iirds-d/iirds-data iirds-d/maintenance-interval "/>
+          </optional>
+        </define>
+      </div>-->
+      <div>
+        <a:documentation> LONG NAME: Qualification Element</a:documentation>
+        <define name="qualification.element">
+          <element name="qualification" dita:longName="iiRDS Qualification">
+            <ref name="qualification.content"/>
+            <ref name="qualification.attlist"/>
+          </element>
+        </define>
+        <define name="qualification.content">
+          <a:documentation>For each qualification, a role and a skilllevel may be given</a:documentation>    
+          <optional>
+            <ref name="qualification-role.element"/>
+          </optional>
+          <optional>
+            <ref name="qualification-skilllevel.element"/>
+          </optional>
+        </define>
+        <define name="qualification.attlist" combine="interleave">
+          <ref name="qualification.attributes"/>
+        </define>
+        <define name="qualification.attributes">
+          <ref name="univ-atts"/>
+          <optional>
+            <attribute name="class"
+              a:defaultValue="+ topic/data iirds-d/iirds-data iirds-d/qualification "/>
+          </optional>
+        </define>
+      </div>
+      <div>
+        <a:documentation> LONG NAME: IIRDS Qualification Role Element</a:documentation>
+        <define name="qualification-role.element">
+          <element name="qualification-role" dita:longName="iiRDS Qualification Role Element">
+            <ref name="qualification-role.content"/>
+            <ref name="qualification-role.attlist"/>
+          </element>
+        </define>
+        <define name="qualification-role.content">
+          <ref name="iirds-metadata.cnt"/>
+        </define>
+        <define name="qualification-role.attlist" combine="interleave">
+          <ref name="qualification-role.attributes"/>
+        </define>
+        <define name="qualification-role.attributes">
+          <ref name="univ-atts"/>
+          <optional>
+            <attribute name="class"
+              a:defaultValue="+ topic/data iirds-d/iirds-data iirds-d/qualification-role "/>
+          </optional>
+        </define>
+      </div>
+      <div>
+        <a:documentation> LONG NAME: IIRDS Qualification Skill Level Element</a:documentation>
+        <define name="qualification-skilllevel.element">
+          <element name="qualification-skilllevel"
+            dita:longName="iiRDS Qualification Skill Level Element">
+            <ref name="qualification-skilllevel.content"/>
+            <ref name="qualification-skilllevel.attlist"/>
+          </element>
+        </define>
+        <define name="qualification-skilllevel.content">
+          <ref name="iirds-metadata.cnt"/>
+        </define>
+        <define name="qualification-skilllevel.attlist" combine="interleave">
+          <ref name="qualification-skilllevel.attributes"/>
+        </define>
+        <define name="qualification-skilllevel.attributes">
+          <ref name="univ-atts"/>
+          <optional>
+            <attribute name="class"
+              a:defaultValue="+ topic/data iirds-d/iirds-data iirds-d/qualification-skilllevel "/>
+          </optional>
+        </define>
+      </div>
+    </div>
+    <div>
+      <a:documentation>Metadata elements within Product Metadata </a:documentation>
+      <!--<div>
+        <a:documentation> LONG NAME: iiRDS Component Element</a:documentation>
+        <define name="iirds-component.element">
+          <element name="iirds-component" dita:longName="iiRDS Component">
+            <ref name="iirds-component.content"/>
+            <ref name="iirds-component.attlist"/>
+          </element>
+        </define>
+        <define name="iirds-component.content">
+          <ref name="iirds-metadata.cnt"/>
+        </define>
+        <define name="iirds-component.attlist" combine="interleave">
+          <ref name="iirds-component.attributes"/>
+        </define>
+        <define name="iirds-component.attributes">
+          <ref name="univ-atts"/>
+          <optional>
+            <attribute name="class"
+              a:defaultValue="+ topic/data iirds-d/iirds-data iirds-d/iirds-component "/>
+          </optional>
+        </define>
+      </div>-->
+      
+      <!--<div>
+        <a:documentation> LONG NAME: iiRDS Phase of Product Life Cycle</a:documentation>
+        <define name="product-lifecycle-phase.element">
+          <element name="product-lifecycle-phase" dita:longName="iiRDS Phase of Product Life Cycle">
+            <ref name="product-lifecycle-phase.content"/>
+            <ref name="product-lifecycle-phase.attlist"/>
+          </element>
+        </define>
+        <define name="product-lifecycle-phase.content">
+          <ref name="iirds-metadata.cnt"/>
+        </define>
+        <define name="product-lifecycle-phase.attlist" combine="interleave">
+          <ref name="product-lifecycle-phase.attributes"/>
+        </define>
+        <define name="product-lifecycle-phase.attributes">
+          <ref name="univ-atts"/>
+          <optional>
+            <attribute name="class"
+              a:defaultValue="+ topic/data iirds-d/iirds-data iirds-d/product-lifecycle-phase "/>
+          </optional>
+        </define>
+      </div>-->
+      
+      
+      <!--<div>
+        <a:documentation> LONG NAME: iiRDS Product Feature Element</a:documentation>
+        <define name="product-feature.element">
+          <element name="product-feature" dita:longName="iiRDS Product Feature">
+            <ref name="product-feature.content"/>
+            <ref name="product-feature.attlist"/>
+          </element>
+        </define>
+        <define name="product-feature.content">
+          <ref name="iirds-metadata.cnt"/>
+        </define>
+        <define name="product-feature.attlist" combine="interleave">
+          <ref name="product-feature.attributes"/>
+        </define>
+        <define name="product-feature.attributes">
+          <ref name="univ-atts"/>
+          <optional>
+            <attribute name="class"
+              a:defaultValue="+ topic/data iirds-d/iirds-data iirds-d/product-feature "/>
+          </optional>
+        </define>
+      </div>-->
+      
+      
+      <!--<div>
+        <a:documentation> LONG NAME: iiRDS Product Variant Element</a:documentation>
+        <define name="product-variant.element">
+          <element name="product-variant" dita:longName="iiRDS Product Variant">
+            <ref name="product-variant.content"/>
+            <ref name="product-variant.attlist"/>
+          </element>
+        </define>
+    
+        <define name="product-variant.content">
+          <ref name="iirds-metadata.cnt"/>
+        </define>
+        <define name="product-variant.attlist" combine="interleave">
+          <ref name="product-variant.attributes"/>
+        </define>
+        <define name="product-variant.attributes">
+          <ref name="univ-atts"/>
+          <optional>
+            <attribute name="class"
+              a:defaultValue="+ topic/data iirds-d/iirds-data iirds-d/product-variant "/>
+          </optional>
+        </define>
+      </div>-->
+      
+    </div>
+    <div>
+      <a:documentation>Metadata elements within Administrative Metadata </a:documentation>
+      <div>
+        <a:documentation> LONG NAME: iiRDS Identity Element</a:documentation>
+        <define name="identity.element">
+          <element name="identity" dita:longName="iiRDS Identity">
+            <ref name="identity.content"/>
+            <ref name="identity.attlist"/>
+          </element>
+        </define>
+        <define name="identity.content">
+          <a:documentation>Each identity must have an identifier and an identity domain. Party is optional.</a:documentation>
+          <interleave>
+            <ref name="identity-identifier.element"/>
+            <ref name="identity-domain.element"/>
+            <optional>
+              <ref name="party.element"/>
+            </optional>
+          </interleave>  
+        </define>
+        <define name="identity.attlist" combine="interleave">
+          <ref name="identity.attributes"/>
+        </define>
+        <define name="identity.attributes">
+          <ref name="univ-atts"/>
+          <optional>
+            <attribute name="class"
+              a:defaultValue="+ topic/data iirds-d/iirds-data iirds-d/identity "/>
+          </optional>
+        </define>
+      </div>
+      <div>
+        <a:documentation> LONG NAME: iiRDS Identity Identifier Element</a:documentation>
+        <define name="identity-identifier.element">
+          <element name="identity-identifier" dita:longName="iiRDS Identity Identifier">
+            <ref name="identity-identifier.content"/>
+            <ref name="identity-identifier.attlist"/>
+          </element>
+        </define>
+        <define name="identity-identifier.content">
+          <ref name="iirds-metadata.cnt"/>
+        </define>
+        <define name="identity-identifier.attlist" combine="interleave">
+          <ref name="identity-identifier.attributes"/>
+        </define>
+        <define name="identity-identifier.attributes">
+          <ref name="univ-atts"/>
+          <optional>
+            <attribute name="class"
+              a:defaultValue="+ topic/data iirds-d/iirds-data iirds-d/identity-identifier "/>
+          </optional>
+        </define>
+      </div>
+      <div>
+        <a:documentation> LONG NAME: iiRDS Identity Domain Element</a:documentation>
+        <define name="identity-domain.element">
+          <element name="identity-domain" dita:longName="iiRDS Identity Domain">
+            <ref name="identity-domain.content"/>
+            <ref name="identity-domain.attlist"/>
+          </element>
+        </define>
+        <define name="identity-domain.content">
+          <ref name="iirds-metadata.cnt"/>          
+        </define>
+        <define name="identity-domain.attlist" combine="interleave">
+          <ref name="identity-domain.attributes"/>
+        </define>
+        <define name="identity-domain.attributes">
+          <ref name="univ-atts"/>
+          <optional>
+            <attribute name="class"
+              a:defaultValue="+ topic/data iirds-d/iirds-data iirds-d/identity-domain "/>
+          </optional>
+        </define>
+      </div>
+      
+      <div>
+        <a:documentation> LONG NAME: iiRDS Party</a:documentation>
+        <define name="party.element">
+          <element name="party" dita:longName="iiRDS Party">
+            <ref name="party.content"/>
+            <ref name="party.attlist"/>
+          </element>
+        </define>
+        <define name="party.content">
+          <interleave>                   
+            <ref name="party-role.element"/>        
+            <choice>
+              <ref name="personinfo.element"/>
+              <ref name="organizationinfo.element"/>
+            </choice> 
+          </interleave>
+        </define>
+        <define name="party.attlist" combine="interleave">
+          <ref name="party.attributes"/>
+        </define>
+        <define name="party.attributes">
+          <ref name="univ-atts"/>
+          <optional>
+            <attribute name="class"
+              a:defaultValue="+ topic/data iirds-d/iirds-data iirds-d/party "/>
+          </optional>
+        </define>
+      </div>
+      <div>
+        <a:documentation> LONG NAME: iiRDS Party Role</a:documentation>
+        <define name="party-role.element">
+          <element name="party-role" dita:longName="iiRDS Party Role">
+            <ref name="party-role.content"/>
+            <ref name="party-role.attlist"/>
+          </element>
+        </define>
+        <define name="party-role.content">
+          <ref name="iirds-metadata.cnt"/>          
+        </define>
+        <define name="party-role.attlist" combine="interleave">
+          <ref name="party-role.attributes"/>
+        </define>
+        <define name="party-role.attributes">
+          <ref name="univ-atts"/>
+          <optional>
+            <attribute name="class"
+              a:defaultValue="+ topic/data iirds-d/iirds-data iirds-d/party-role "/>
+          </optional>
+        </define>
+      </div>
+      
+      <div>
+        <a:documentation> LONG NAME: iiRDS Content Lifecycle Status</a:documentation>
+        <define name="content-lifecycle-status.element">
+          <element name="content-lifecycle-status" dita:longName="iiRDS Content Lifecycle Status">
+            <ref name="content-lifecycle-status.content"/>
+            <ref name="content-lifecycle-status.attlist"/>
+          </element>
+        </define>
+        <define name="content-lifecycle-status.content">
+          <ref name="iirds-metadata.cnt"/>
+          <interleave>
+            <ref name="content-lifecycle-status-value.element"/>            
+            <optional>
+              <ref name="status-purpose.element"/>
+            </optional>
+            <optional>
+              <ref name="status-comment.element"/>
+            </optional>
+            <optional>
+              <ref name="critdates.element"/>
+            </optional>
+            <optional>
+              <ref name="party.element"/>
+            </optional>
+          </interleave>
+        </define>
+        <define name="content-lifecycle-status.attlist" combine="interleave">
+          <ref name="content-lifecycle-status.attributes"/>
+        </define>
+        <define name="content-lifecycle-status.attributes">
+          <ref name="univ-atts"/>
+          <optional>
+            <attribute name="class"
+              a:defaultValue="+ topic/data iirds-d/iirds-data iirds-d/content-lifecycle-status "/>
+          </optional>
+        </define>
+      </div>
+      <div>
+        <a:documentation> LONG NAME: iiRDS Content Lifecycle Status Value</a:documentation>
+        <define name="content-lifecycle-status-value.element">
+          <element name="content-lifecycle-status-value" dita:longName="iiRDS Content Lifecycle Status Value">
+            <ref name="content-lifecycle-status-value.content"/>
+            <ref name="content-lifecycle-status-value.attlist"/>
+          </element>
+        </define>
+        <define name="content-lifecycle-status-value.content">
+          <ref name="iirds-metadata.cnt"/>          
+        </define>
+        <define name="content-lifecycle-status-value.attlist" combine="interleave">
+          <ref name="content-lifecycle-status-value.attributes"/>
+        </define>
+        <define name="content-lifecycle-status-value.attributes">
+          <ref name="univ-atts"/>
+          <optional>
+            <attribute name="class"
+              a:defaultValue="+ topic/data iirds-d/iirds-data iirds-d/content-lifecycle-status-value "/>
+          </optional>
+        </define>
+      </div>
+      <div>
+        <a:documentation> LONG NAME: iiRDS Content Lifecycle Status Comment</a:documentation>
+        <define name="status-comment.element">
+          <element name="status-comment" dita:longName="iiRDS Content Lifecycle Status Comment">
+            <ref name="status-comment.content"/>
+            <ref name="status-comment.attlist"/>
+          </element>
+        </define>
+        <define name="status-comment.content">
+          <ref name="iirds-metadata.cnt"/>          
+        </define>
+        <define name="status-comment.attlist" combine="interleave">
+          <ref name="content-lifecycle-status-value.attributes"/>
+        </define>
+        <define name="status-comment.attributes">
+          <ref name="univ-atts"/>
+          <optional>
+            <attribute name="class"
+              a:defaultValue="+ topic/data iirds-d/iirds-data iirds-d/status-comment "/>
+          </optional>
+        </define>
+      </div>
+      <div>
+        <a:documentation> LONG NAME: iiRDS Content Lifecycle Status Purpose</a:documentation>
+        <define name="status-purpose.element">
+          <element name="status-purpose" dita:longName="iiRDS Content Lifecycle Status Purpose">
+            <ref name="status-purpose.content"/>
+            <ref name="status-purpose.attlist"/>
+          </element>
+        </define>
+        <define name="status-purpose.content">
+          <ref name="iirds-metadata.cnt"/>          
+        </define>
+        <define name="status-purpose.attlist" combine="interleave">
+          <ref name="status-purpose.attributes"/>
+        </define>
+        <define name="status-purpose.attributes">
+          <ref name="univ-atts"/>
+          <optional>
+            <attribute name="class"
+              a:defaultValue="+ topic/data iirds-d/iirds-data iirds-d/status-purpose "/>
+          </optional>
+        </define>
+      </div>
+    </div>
+  </div>
+  
+  
+  <div>
+    <a:documentation>Basic Patterns</a:documentation>
+    <define name="iirds-metadata.cnt">
+      <zeroOrMore>
+        <choice>
+          <text/>
+          <ref name="keyword"/>
+          <ref name="ph"/>
+          <ref name="draft-comment" dita:since="1.3"/>
+        </choice>
+      </zeroOrMore>
+    </define>
+  </div>
+</grammar>
