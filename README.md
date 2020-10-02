@@ -62,7 +62,7 @@ Sample command line for executing an iiRDS transformation:
 
 This module extracts iiRDS metadata from attribute values in maps and topics. The attributes must be specialized from the DITA `props` attribute.
 
-Attributes (incomplete list):
+##### Attributes (incomplete list)
 
 -  `iirds-product`
 -  `iirds-component`
@@ -73,7 +73,7 @@ Attributes (incomplete list):
 
 The tokens of the attribute values are taken. When available, the tokens get resolved using the subject scheme of the map. The textual resprensations from the suject scheme are used as metadata entries.
 
-Elements:
+##### Elements
 
 Elements are identified by their class attributes. The elements must be specialized from `+ topic/data iirds-d/iirds-data `. 
 
