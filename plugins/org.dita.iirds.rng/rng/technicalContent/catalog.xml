@@ -6,10 +6,10 @@
                 <!-- System ID (URL) catalog entries for the project Customization-->
 
                 <!--Topic Shells-->
-                <system systemId="urn:dita.iirds:rng:iirds_topic.rng" uri="rng/iirds_topic.rng"/>
-                <system systemId="urn:dita.iirds:rng:iirds_concept.rng" uri="rng/iirds_concept.rng"/>
-                <system systemId="urn:dita.iirds:rng:iirds_reference.rng" uri="rng/iirds_reference.rng"/>
-                <system systemId="urn:dita.iirds:rng:iirds_task.rng" uri="rng/iirds_task.rng"/>
+                <system systemId="urn:dita:iirds:rng:iirds_topic.rng" uri="rng/iirds_topic.rng"/>
+                <system systemId="urn:dita:iirds:rng:iirds_concept.rng" uri="rng/iirds_concept.rng"/>
+                <system systemId="urn:dita:iirds:rng:iirds_reference.rng" uri="rng/iirds_reference.rng"/>
+                <system systemId="urn:dita:iirds:rng:iirds_task.rng" uri="rng/iirds_task.rng"/>
                 
                 <!--                Map Shells-->
                 <system systemId="urn:dita:iirds:rng:iirds_map.rng" uri="rng/iirds_map.rng"/>
@@ -33,7 +33,7 @@
                 
 
                 <!--     Map Shells-->
-                <uri name="urn:proj:dita:rng:iirds_map.rng" uri="rng/iirds_map.rng"/>
+                <uri name="urn:dita:iirds:rng:iirds_map.rng" uri="rng/iirds_map.rng"/>
 
                 <!--Constraint Modules-->
                 <uri name="urn:dita.iirds:rng:iirds_topicConstraintMod.rng" uri="rng/iirds_topicConstraintMod.rng"/>
